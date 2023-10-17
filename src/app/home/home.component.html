@@ -1,0 +1,21 @@
+
+
+
+<div class="container">
+    <button class="btn btn-danger" (click)="countClick()">click me</button>
+    <p>{{count}}</p>
+
+    <!-- <ng-template [ngIf]="count >= 5">
+        <p>the number is bigger or equal to 5.</p>
+    </ng-template> -->
+
+    <ng-template [ngIf]="count >= 5" [ngIfElse]="demo">
+        <p>the number is bigger or equal to 5.</p>
+    </ng-template>
+
+    <ng-template #demo>
+        <p>the number is smaller than 5.</p>
+    </ng-template>
+
+    <!-- <p *ngIf="count >= 5">the number is bigger or equal to 5.</p> -->
+</div>
