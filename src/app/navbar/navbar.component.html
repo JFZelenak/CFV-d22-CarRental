@@ -1,5 +1,5 @@
 <div class="container">
-    <header class="d-flex justify-content-between py-3 mb-4 border-bottom">
+    <header class="d-flex justify-content-between align-items-center py-3 mb-4 border-bottom">
       <div class="d-flex">
         <a routerLink="" class="d-flex align-items-center link-body-emphasis text-decoration-none border rounded px-2 me-3">
           <i class="bi bi-car-front-fill fs-1 me-3"></i>
@@ -10,13 +10,26 @@
 
       <div>
         <div *ngIf="count >= 200">
-          <p class="h1">VIP</p>
+          <p id="VIP">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <b>VIP</b>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </p>
         </div>
       </div>
       
-      <div class="d-flex flex-column">
+      <div class="d-flex flex-column" id="donateContainer">
         <button class="btn btn-warning" (click)="countClick()">Donate 10€</button>
-        <p>You have donated {{ count }} Euro! Thank you!</p>
+        <ng-template [ngIf]="count == 0" [ngIfElse]="none">
+          <p>Click to donate!</p>
+        </ng-template>
+        <ng-template #none>
+          <p>You have donated {{ count }} Euro! Thank you!</p>
+        </ng-template>
       </div>
 
     </header>
