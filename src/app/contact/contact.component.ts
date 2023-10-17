@@ -24,6 +24,8 @@ export class ContactComponent {
       this.contacts.push(value),
       this.info.reset();
       console.log(this.contacts);
+    } else {
+      alert("required input missing");
     }
   }
 }
