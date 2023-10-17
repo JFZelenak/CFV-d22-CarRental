@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
 
   cars: Array<{type: string, year: number, image: string}> = [{
     type: "Audi",
@@ -35,8 +35,13 @@ export class HomePageComponent {
       this.cars.push(value),
       this.info.reset();
       console.log(this.cars);
+      localStorage.setItem('cars',JSON.stringify(this.cars))
     } else {
       alert("required input missing");
     }
+  }
+
+  ngOnInit(): void {
+    // this.cars = JSON.parse(localStorage.getItem("cars"));
   }
 }
