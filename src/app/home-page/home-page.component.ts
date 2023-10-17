@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
@@ -21,4 +22,21 @@ export class HomePageComponent {
     image: "./assets/images/fiat.jpg"
   }]
 
+  info = new FormGroup({
+    type: new FormControl('',Validators.required),
+    year: new FormControl('',Validators.required),
+    image: new FormControl(''),
+  });
+
+  onSubmitForMyForm(){
+    if(this.info.valid){
+      console.log(this.info.value);
+      let value: any = this.info.value;
+      this.cars.push(value),
+      this.info.reset();
+      console.log(this.cars);
+    } else {
+      alert("required input missing");
+    }
+  }
 }

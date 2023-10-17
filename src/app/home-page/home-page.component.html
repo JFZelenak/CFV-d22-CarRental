@@ -1,5 +1,6 @@
+
 <div class="container">
-    <div class="d-flex">
+    <div class="d-flex flex-wrap">
         <div *ngFor="let val of cars; index as i">
             <div class="myCard d-flex flex-column justify-content-between">
                 <img src="{{ val.image }}" alt="picture of {{ val.type}}">
@@ -10,5 +11,34 @@
                 </div>
             </div>
         </div>
+
+        <div class="myCard">
+            <form [formGroup]="info" (ngSubmit)="onSubmitForMyForm()">
+                <table class="table">
+                    <tr>
+                        <td><label for="type">Car type: </label></td>
+                    </tr>
+                    <tr>
+                        <td><input id="type" type="text" formControlName="type"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="year">Year of production: </label></td>
+                    </tr>
+                    <tr>
+                        <td><input id="year" type="number" formControlName="year"> </td>
+                    </tr>
+                    <tr>
+                        <td><label for="image">Image URL: </label></td>
+                    </tr>
+                    <tr>
+                        <td><input id="image" type="email" formControlName="image"></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" class="btn btn-success">Add car</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
     </div>
 </div>
