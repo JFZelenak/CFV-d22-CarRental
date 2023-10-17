@@ -1,10 +1,13 @@
-
-
-
-<div class="container">
+<div class="container w-25">
     <button class="btn btn-danger" (click)="countClick()">click me</button>
-    <p>{{count}}</p>
+    <p [style.background-color]="count >= 5 ? 'green' : 'red'">{{count}}</p>
 
+    <p [ngStyle]="{
+        'border' : count >= 5 ? '2px solid black' : '2px solid yellow',
+        'background' : count >= 5 ? 'green' : 'red'
+    }">{{count}}</p>
+
+    <p [class.test]="count >= 5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatem qui repellat ipsa?</p>
     <!-- <ng-template [ngIf]="count >= 5">
         <p>the number is bigger or equal to 5.</p>
     </ng-template> -->
