@@ -12,7 +12,7 @@ export class HomePageComponent {
     year: 2021,
     image: "./assets/images/audi.jpg"
   },{
-    type: "chrysler",
+    type: "Chrysler",
     year: 2022,
     image: "./assets/images/chrysler.jpg"
   },{
