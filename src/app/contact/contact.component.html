@@ -1,1 +1,45 @@
-<p>contact works!</p>
+<div class="container w-50" >
+    <form [formGroup]="info" (ngSubmit)="onSubmitForMyForm()">
+        <table class="table">
+            <tr>
+                <td><label for="fName">Firstname: </label></td>
+                <td><input id="fName" type="text" formControlName="fName"></td>
+            </tr>
+            <tr>
+                <td><label for="lName">Lastname: </label></td>
+                <td><input id="lName" type="text" formControlName="lName"></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age: </label></td>
+                <td><input id="age" type="number" formControlName="age"> </td>
+            </tr>
+            <tr>
+                <td><label for="email">Email: </label></td>
+                <td><input id="email" type="email" formControlName="email"></td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-danger">click me</button></td>
+            </tr>
+        </table>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let val of contacts; index as i">
+                <th>{{i+1}}</th>
+                <td>{{val.fName}}</td>
+                <td>{{val.lName}}</td>
+                <td>{{val.age}}</td>
+                <td>{{val.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
