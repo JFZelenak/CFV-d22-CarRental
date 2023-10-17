@@ -30,3 +30,15 @@
         <hr>
     </div>
 </div>
+<div class="container w-50" >
+    <form [formGroup]="info" (ngSubmit)="onSubmitForMyForm()">
+        <label for="name">Name: </label>
+        <input id="name" type="text" formControlName="name">
+        <!-- <p>you need to type your name</p> -->
+        <label for="age">Age: </label>
+        <input id="age" type="number" formControlName="age">
+        <!-- <p>you need to type your age</p> -->
+        <button type="submit" class="btn btn-danger">click me</button>
+    </form>
+</div>
+
