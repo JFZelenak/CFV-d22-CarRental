@@ -1,1 +1,14 @@
-<p>home-page works!</p>
+<div class="container">
+    <div class="d-flex">
+        <div *ngFor="let val of cars; index as i">
+            <div class="myCard d-flex flex-column justify-content-between">
+                <img src="{{ val.image }}" alt="picture of {{ val.type}}">
+                <div>
+                    <p class="h5">Car Number: {{ i + 1}}</p>
+                    <p class="h3">Type of car: {{ val.type }}</p>
+                    <p class="h4">Year of production: {{ val.year }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
