@@ -22,3 +22,11 @@
 
     <!-- <p *ngIf="count >= 5">the number is bigger or equal to 5.</p> -->
 </div>
+<div class="container border w-25">
+    <div *ngFor="let val of students; index as i">
+        <p>{{ val.name }}</p>
+        <p>{{ val.age }}</p>
+        <p>{{ i }}</p>
+        <hr>
+    </div>
+</div>

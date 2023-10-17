@@ -8,6 +8,17 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   count : number = 0;
 
+  students: Array<{name: string, age: number}> = [{
+    name: "David",
+    age: 30
+  },{
+    name: "Sue",
+    age: 25
+  },{
+    name: "Kim",
+    age: 40
+  }]
+
   countClick() {
     this.count++;
   }
